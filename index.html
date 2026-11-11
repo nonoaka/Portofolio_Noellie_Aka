@@ -1,496 +1,733 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Portfolio Noellie Aka - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
+  <title>Portfolio &mdash; Noellie Aka</title>
+  <meta name="description" content="Portfolio de Noellie Aka, Data Scientist sp&eacute;cialis&eacute;e en IA et Machine Learning.">
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendors -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    /* ===========================================
+       NOELLIE AKA &mdash; PORTFOLIO v2
+    =========================================== */
 
-  <!-- =======================================================
-  * Template Name: MyResume - v4.7.0
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-dark: #0a0f1e;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --accent: #2563eb;
+      --accent-bg: #eff6ff;
+      --border: #e2e8f0;
+      --radius: 10px;
+      --radius-lg: 12px;
+      --font-head: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --max-w: 1200px;
+      --pad: clamp(20px, 5vw, 60px);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 62px;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); }
+    a { color: var(--accent); }
+    a:hover { color: #1d4ed8; }
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 4px; }
+
+    /* Hide the old sidebar template */
+    #header, .mobile-nav-toggle, #preloader { display: none !important; }
+
+    /* ---- Container ---- */
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ---- Sections ---- */
+    .s { padding: 80px 0; }
+    .s--alt { background: var(--bg-alt); }
+
+    .s-num {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    }
+    .s-title {
+      font-size: clamp(26px, 3vw, 32px); font-weight: 700;
+      color: #0f172a; letter-spacing: -0.5px; margin-bottom: 40px; line-height: 1.1;
+    }
+
+    /* ---- TOP NAV ---- */
+    .topnav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1050;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: 62px; display: flex; align-items: center;
+      padding: 0 var(--pad); justify-content: space-between;
+    }
+    .topnav-logo {
+      font-family: var(--font-head); font-weight: 700; font-size: 15px;
+      color: #0f172a !important; letter-spacing: -0.3px; text-decoration: none !important;
+    }
+    .topnav-links {
+      display: flex; gap: 24px; align-items: center;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .topnav-links a {
+      font-size: 13px; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; transition: color 0.15s; white-space: nowrap;
+    }
+    .topnav-links a:hover,
+    .topnav-links a.active { color: var(--accent); }
+    .topnav-lang { display: flex; gap: 6px; align-items: center; font-size: 13px; font-weight: 600; }
+    .topnav-lang a { text-decoration: none; }
+    .topnav-lang a.active { color: var(--accent); }
+    .topnav-lang a:not(.active) { color: var(--text-light); }
+    .topnav-lang-sep { color: var(--border); }
+    @media (max-width: 1024px) { .topnav-links { display: none; } }
+
+    /* ---- HERO ---- */
+    #hero { background: var(--bg-dark); padding: 90px 0; }
+    #hero .hero-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #3b82f6; margin-bottom: 22px;
+    }
+    #hero h1 {
+      font-size: clamp(48px, 7vw, 80px); font-weight: 700;
+      letter-spacing: -3px; color: white; line-height: 0.9; margin-bottom: 32px;
+    }
+    .hero-rule { width: 44px; height: 2px; background: var(--accent); margin-bottom: 32px; }
+    #hero .hero-intro {
+      font-size: 15px; color: rgba(255,255,255,0.65);
+      line-height: 1.85; max-width: 600px; margin-bottom: 32px;
+    }
+    .hero-motto { border-left: 2px solid var(--accent); padding-left: 20px; max-width: 560px; }
+    .hero-motto p {
+      font-size: 14px; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.8; margin: 0;
+    }
+    .hero-motto strong { font-style: normal; color: rgba(255,255,255,0.88); }
+    #hero .typed-cursor { color: rgba(255,255,255,0.5); }
+
+    /* ---- SKILLS ---- */
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1024px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .skills-grid { grid-template-columns: 1fr; } }
+
+    .skill-card {
+      background: var(--bg-alt); border-radius: var(--radius);
+      padding: 20px; border-top: 2px solid var(--border);
+    }
+    .s--alt .skill-card { background: white; }
+    .skill-card.c1 { border-top-color: #2563eb; }
+    .skill-card.c2 { border-top-color: #7c3aed; }
+    .skill-card.c3 { border-top-color: #059669; }
+    .skill-card.c4 { border-top-color: #d97706; }
+    .skill-card-label {
+      font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 14px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      background: white; border: 1px solid var(--border);
+      border-radius: 100px; padding: 4px 11px; font-size: 12px; color: #334155;
+    }
+
+    /* ---- EDUCATION ---- */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 768px) { .edu-grid { grid-template-columns: 1fr; } }
+
+    .edu-card {
+      background: white; padding: 28px;
+      border-radius: var(--radius-lg); border: 1px solid var(--border);
+    }
+    .edu-year { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 8px; }
+    .edu-title { font-size: 17px; font-weight: 700; color: #0f172a; line-height: 1.4; margin-bottom: 6px; }
+    .edu-title a { color: inherit; text-decoration: none; }
+    .edu-title a:hover { color: var(--accent); }
+    .edu-school { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+    .edu-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 600; color: #92400e;
+      background: #fef3c7; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .edu-list { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .edu-list li { margin-bottom: 4px; }
+
+    /* ---- CERTIFICATES ---- */
+    #portfolio-flters {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      list-style: none; padding: 0; margin: 0 0 32px;
+    }
+    #portfolio-flters li {
+      padding: 6px 15px; border-radius: 100px;
+      border: 1px solid var(--border); background: white;
+      color: var(--text-muted); font-size: 12px; font-weight: 500;
+      cursor: pointer; transition: all 0.15s; user-select: none;
+    }
+    #portfolio-flters li:hover { border-color: var(--accent); color: var(--accent); }
+    #portfolio-flters li.filter-active { background: var(--accent); color: white; border-color: var(--accent); }
+
+    .portfolio-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 768px) { .portfolio-container { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .portfolio-container { grid-template-columns: 1fr; } }
+
+    .portfolio-item { margin: 0; }
+    .portfolio-wrap {
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .portfolio-wrap img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8fafc; }
+
+    /* ---- EXPERIENCE ---- */
+    .exp-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px; margin-bottom: 20px;
+    }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+    .exp-role { font-size: 20px; font-weight: 700; color: #0f172a; margin: 0; }
+    .exp-period { font-size: 13px; color: var(--text-muted); font-weight: 500; white-space: nowrap; margin-left: 20px; flex-shrink: 0; }
+    .exp-company { font-size: 14px; font-weight: 500; color: var(--accent); margin-bottom: 14px; }
+    .exp-company a { color: inherit; text-decoration: none; }
+    .exp-company a:hover { text-decoration: underline; }
+    .exp-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+    .exp-desc strong { color: #334155; font-weight: 600; }
+    .exp-list { font-size: 13px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+    .exp-list li { margin-bottom: 3px; }
+
+    .kpi-band { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    .kpi-item { flex: 1; min-width: 180px; background: var(--accent-bg); border-radius: 8px; padding: 14px 18px; }
+    .kpi-num {
+      font-family: var(--font-head); font-size: 24px; font-weight: 700;
+      color: var(--accent); line-height: 1; margin-bottom: 5px;
+    }
+    .kpi-label { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+    .exp-body-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 768px) { .exp-body-cols { grid-template-columns: 1fr; } }
+
+    .exp-sub-title {
+      font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: #334155; margin: 0 0 8px;
+    }
+
+    /* ---- PROJECTS ---- */
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .proj-grid { grid-template-columns: 1fr; } }
+
+    .proj-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; transition: box-shadow 0.2s;
+    }
+    .proj-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .proj-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .proj-title { font-size: 14.5px; font-weight: 700; color: #0f172a; margin-bottom: 8px; line-height: 1.4; }
+    .proj-title a { color: inherit; text-decoration: none; }
+    .proj-title a:hover { color: var(--accent); }
+    .proj-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    /* ---- VOLUNTEER ---- */
+    .vol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .vol-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .vol-grid { grid-template-columns: 1fr; } }
+
+    .vol-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .vol-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; line-height: 1.4; }
+    .vol-period { font-size: 12px; color: var(--text-light); margin-bottom: 12px; }
+    .vol-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .vol-links { display: flex; flex-direction: column; gap: 5px; }
+    .vol-links a { font-size: 12.5px; color: var(--accent); text-decoration: none; }
+    .vol-links a:hover { text-decoration: underline; }
+
+    /* ---- FOOTER ---- */
+    #footer { background: var(--bg-dark); padding: 52px 0; }
+    .footer-name { font-size: 22px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+    .footer-contact { display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
+    .footer-contact a,
+    .footer-contact span { font-size: 13.5px; color: rgba(255,255,255,0.55); font-weight: 500; }
+    .footer-contact a { text-decoration: none; }
+    .footer-contact a:hover { color: rgba(255,255,255,0.85); }
+
+    /* ---- BACK TO TOP ---- */
+    .back-to-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 996;
+      background: var(--accent); color: white;
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s; text-decoration: none;
+    }
+    .back-to-top.active { opacity: 1; }
+    .back-to-top:hover { background: #1d4ed8; color: white; }
+  </style>
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
-
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bi bi-pc-display-horizontal"></i> <span>Compétences</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-mortarboard-fill"></i> <span>Formations</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-award-fill"></i> <span>Certificats</span></a></li>
-        <li><a href="#resume1" class="nav-link scrollto"><i class="bi bi-briefcase-fill"></i> <span>Expériences professionnelles</span></a></li>
-        <li><a href="#services" class="nav-link scrollto"><i class="bi bi-clipboard-data"></i> <span>Projets</span></a></li>
-        <li><a href="#facts" class="nav-link scrollto"><i class="bi bi-shop"></i> <span>Expériences extra-académiques</span></a></li>
-
-        
-      </ul>
-    </nav><!-- .nav-menu -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Découvrez mon univers</h1>
-      <p>Je suis <span class="typed" data-typed-items="NOELLIE AKA, Data Scientist, à l'écoute de nouvelles opportunités"></span></p>
-      <p><em> Bonjour cher/chère visiteur(se) et bienvenue sur mon portfolio👋 ,<br>Mon amour pour les mathématiques et les nouvelles technologies m’a conduit vers la Data Science, un métier qui figure parmi les jobs les plus sexy du 21e siècle et qui crée un emballement médiatique tant les progrès dans ce domaine sont fulgurants. 
-<br>Comment répondre aux exigences du marché face à un métier qui ne cesse de se réinventer ? Pour moi, cela passe par deux choses essentielles : la recherche et surtout la pratique. Ce sont ces deux points qui m’ont encouragés à créer ce portfolio dans lequel vous découvrirez les différents projets que j’ai pu mener pour approfondir mes connaissances. Vous retrouverez  également des informations sur mon parcours universitaire et mes expériences professionnelles.
-
-<br>N'hésitez pas à les regarder, à les partager et à apporter votre contribution. </em> </p>
-
+  <!-- TOP NAV -->
+  <nav class="topnav">
+    <a href="#hero" class="topnav-logo scrollto">Noellie Aka</a>
+    <ul class="topnav-links">
+      <li><a href="#competences" class="scrollto">Comp&eacute;tences</a></li>
+      <li><a href="#formations" class="scrollto">Formations</a></li>
+      <li><a href="#certificats" class="scrollto">Certificats</a></li>
+      <li><a href="#experiences" class="scrollto">Exp&eacute;riences</a></li>
+      <li><a href="#projets" class="scrollto">Projets</a></li>
+      <li><a href="#benevolat" class="scrollto">B&eacute;n&eacute;volat</a></li>
+    </ul>
+    <div class="topnav-lang">
+      <a href="index.html" class="active">FR</a>
+      <span class="topnav-lang-sep">|</span>
+      <a href="index-en.html">EN</a>
     </div>
+  </nav>
 
-  </section><!-- End Hero --> 
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap" data-aos="fade-up" data-aos-delay="100">
+      <p class="hero-eyebrow">Je suis <span class="typed" data-typed-items="Data Scientist,passionn&eacute;e par l'IA,&agrave; l'&eacute;coute de nouvelles opportunit&eacute;s"></span></p>
+      <h1>Noellie<br>Aka</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-intro">
+        Bonjour cher/ch&egrave;re visiteur(se) et bienvenue sur mon portfolio &#128075;&nbsp;
+        Mon amour pour les math&eacute;matiques et les nouvelles technologies m'a conduit vers l'intelligence Artificielle, un domaine qui cr&eacute;e un emballement m&eacute;diatique tant les progr&egrave;s dans ce domaine sont fulgurants.
+        Comment r&eacute;pondre aux exigences du march&eacute; face &agrave; un m&eacute;tier qui ne cesse de se r&eacute;inventer&nbsp;? Pour moi, cela passe par la recherche et surtout la pratique.
+      </p>
+      <div class="hero-motto">
+        <p>Si vous travaillez avec moi, retenez&nbsp;: <strong>L'utile avant la tendance, le fiable avant le parfait, et toujours la simplicit&eacute;.</strong></p>
+      </div>
+    </div>
+  </section>
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Compétences</h2>
+    <!-- COMP&Eacute;TENCES -->
+    <section id="competences" class="s">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">01</p>
+        <h2 class="s-title">Comp&eacute;tences</h2>
+        <div class="skills-grid">
+          <div class="skill-card c1">
+            <p class="skill-card-label">Langages &amp; Frameworks</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">SAS</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Django</span>
+            </div>
+          </div>
+          <div class="skill-card c2">
+            <p class="skill-card-label">IA &amp; Machine Learning</p>
+            <div class="skill-tags">
+              <span class="skill-tag">LLM / GenAI</span>
+              <span class="skill-tag">RAG</span>
+              <span class="skill-tag">Multi-agent</span>
+              <span class="skill-tag">Prompt engineering</span>
+              <span class="skill-tag">Fine-tuning</span>
+              <span class="skill-tag">NLP (BERT)</span>
+              <span class="skill-tag">XGBoost</span>
+              <span class="skill-tag">SHAP</span>
+              <span class="skill-tag">ResNet</span>
+              <span class="skill-tag">OCR</span>
+            </div>
+          </div>
+          <div class="skill-card c3">
+            <p class="skill-card-label">Cloud &amp; Infrastructure</p>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">GitLab CI/CD</span>
+              <span class="skill-tag">MLflow</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Terraform</span>
+            </div>
+          </div>
+          <div class="skill-card c4">
+            <p class="skill-card-label">Visualisation &amp; Outils</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">Minitab</span>
+              <span class="skill-tag">Google Analytics</span>
+              <span class="skill-tag">HTML &amp; CSS</span>
+              <span class="skill-tag">Pack Office</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/log.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <div class="row">
-              <div class="col-lg-4">
-                <h3>Analyses statistiques et programmation</h3>
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i>Python</li>
-                  <li><i class="bi bi-chevron-right"></i>R</li>
-                  <li><i class="bi bi-chevron-right"></i>SAS</li>
-                  <li><i class="bi bi-chevron-right"></i>Google Analytics</li>
-                  <li><i class="bi bi-chevron-right"></i>Power BI</li>
-                  <li><i class="bi bi-chevron-right"></i>Django</li>
-                </ul>
-              </div>
-              <div class="col-lg-4">
-                <h3> Cloud et base de données</h3>
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i>AWS</li>
-                  <li><i class="bi bi-chevron-right"></i>SQL</li>
-                  <li><i class="bi bi-chevron-right"></i>Mongo DB</li>
-                  <li><i class="bi bi-chevron-right"></i>Terraform</li>
-                </ul>
-              </div>
-              <div class="col-lg-4">
-                <h3> Conception de site et autres</h3>
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i>GitLab</li>
-                  <li><i class="bi bi-chevron-right"></i>HTML</li>
-                  <li><i class="bi bi-chevron-right"></i>CSS</li>
-                  <li><i class="bi bi-chevron-right"></i>Streamlit</li>
-                  <li> <i class="bi bi-chevron-right"></i>Pack Office</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- FORMATIONS -->
+    <section id="formations" class="s s--alt">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">02</p>
+        <h2 class="s-title">Formations</h2>
+        <div class="edu-grid">
 
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Formations</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="resume-item">
-              <h4>Master méthodes stochastiques et informatiques décisionnelles</h4>
-              <h5>2021 - 2023</h5>
-              <p><em>Université de Pau et des pays de l'Adour</em></p>
-              <li>Mathématiques : Statistiques inférentielles,optimisation, analyse matricielle, méthodes de Monte Carlo,sûreté de fonctionnement, analyse de survie, maîtrise statistique des procédés, plans d'expérience</li>
-              <li>Informatiques : Entrepôt de données,Programmation, Conception des systèmes d'information</li>
-              <li> Intelligence artificielle : Machine Learning, Data mining, Deep Learning
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="resume-item">
-              <h4>Licence mathématiques et informatiques décisionelles</h4>
-              <h5>2018 - 2021</h5>
-              <p><em>Université de Pau et des pays de l'Adour </em></p>
-              <ul>
-                <li>Mathématiques : Probabilités, statistiques, algèbre,optimisation</li>
-                <li>Informatiques : Base de données, data Mining,programmation algorithmique</li>
-                <li>Sciences humaines et sociales: Economie, gestion et comptabilité </li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Certificats</h2>
-          Afin d'approfondir mes compétences et découvrir de nouvelles technologies, j'ai suivi des cours en lignes. Les certificats sont disponibles dans cette session.
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Tout</li>
-              <li data-filter=".filter-aws_essentials">AWS Architecting</li>
-              <li data-filter=".filter-aws_quest_cp">AWS Cloud Practitioner</li>
-              <li data-filter=".filter-app">Google Analytics</li>
-              <li data-filter=".filter-web">HTML et CSS</li>
-              <li data-filter=".filter-card">Python</li>
-              <li data-filter=".filter-r">R Studio</li>
-              <li data-filter=".filter-excel">Excel</li>
-              <li data-filter=".filter-powerbi">Power BI</li>
+          <div class="edu-card">
+            <p class="edu-year">2021 &mdash; 2023</p>
+            <h3 class="edu-title">
+              <a href="https://formation.univ-pau.fr/fr/catalogue/master-XB/master-mention-mathematiques-et-applications-L3Y9AGO1/parcours-methodes-stochastiques-et-informatiques-pour-la-decision-L3Y9BRCU.html" target="_blank">Master m&eacute;thodes stochastiques et informatiques d&eacute;cisionnelles</a>
+            </h3>
+            <p class="edu-school">Universit&eacute; de Pau et des pays de l'Adour</p>
+            <span class="edu-badge">&#127942; Major de promotion &mdash; mention tr&egrave;s bien &mdash; Bourse Talent's Academy</span>
+            <ul class="edu-list">
+              <li>Math&eacute;matiques : Statistiques inf&eacute;rentielles, optimisation, analyse matricielle, m&eacute;thodes de Monte Carlo, s&ucirc;ret&eacute; de fonctionnement, analyse de survie, plans d'exp&eacute;rience</li>
+              <li>Informatiques : Entrep&ocirc;t de donn&eacute;es, Programmation, Conception des syst&egrave;mes d'information</li>
+              <li>Intelligence artificielle : Machine Learning, Data mining, Deep Learning</li>
             </ul>
           </div>
+
+          <div class="edu-card">
+            <p class="edu-year">2018 &mdash; 2021</p>
+            <h3 class="edu-title">
+              <a href="https://formation.univ-pau.fr/fr/catalogue/licence-XA/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-L3VEUHIP/l1-l2-communes-l3-parcours-mathematiques-et-informatique-pour-la-decision-mid-L3VEY0SZ.html" target="_blank">Licence math&eacute;matiques et informatiques d&eacute;cisionnelles</a>
+            </h3>
+            <p class="edu-school">Universit&eacute; de Pau et des pays de l'Adour</p>
+            <span class="edu-badge">&#127942; Major de promotion &mdash; mention tr&egrave;s bien &mdash; Bourse Talent's Academy</span>
+            <ul class="edu-list">
+              <li>Math&eacute;matiques : Probabilit&eacute;s, statistiques, alg&egrave;bre, optimisation</li>
+              <li>Informatiques : Base de donn&eacute;es, data mining, programmation algorithmique</li>
+              <li>Sciences humaines et sociales : Economie, gestion et comptabilit&eacute;</li>
+            </ul>
+          </div>
+
         </div>
+      </div>
+    </section>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-aws_essentials">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/architecting_aws.png" class="img-fluid" alt="">
-            </div>
+    <!-- CERTIFICATS -->
+    <section id="certificats" class="s">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">03</p>
+        <h2 class="s-title">Certificats</h2>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;">Afin d'approfondir mes comp&eacute;tences et d&eacute;couvrir de nouvelles technologies, j'ai suivi des cours en ligne.</p>
+
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">Tout</li>
+          <li data-filter=".filter-aws_essentials">AWS Architecting</li>
+          <li data-filter=".filter-aws_quest_cp">AWS Cloud Practitioner</li>
+          <li data-filter=".filter-app">Google Analytics</li>
+          <li data-filter=".filter-web">HTML &amp; CSS</li>
+          <li data-filter=".filter-card">Python</li>
+          <li data-filter=".filter-r">R Studio</li>
+          <li data-filter=".filter-excel">Excel</li>
+          <li data-filter=".filter-powerbi">Power BI</li>
+          <li data-filter=".filter-govtech">Women in GovTech</li>
+        </ul>
+
+        <div class="portfolio-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-item filter-aws_essentials">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/architecting_aws.png" alt="AWS Architecting"></div>
           </div>
-
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-aws_quest_cp">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/cloud_practitioner.png" class="img-fluid" alt="">
-            </div>
+          <div class="portfolio-item filter-aws_quest_cp">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/cloud_practitioner.png" alt="AWS Cloud Practitioner"></div>
           </div>
-          
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/google.png" class="img-fluid" alt="">
-            </div>
+          <div class="portfolio-item filter-app">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/google.png" alt="Google Analytics"></div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/html.png" class="img-fluid" alt="">
-            </div>
+          <div class="portfolio-item filter-web">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/html.png" alt="HTML &amp; CSS"></div>
           </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/python.png" class="img-fluid" alt="">
-            </div>
+          <div class="portfolio-item filter-card">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/python.png" alt="Python"></div>
           </div>
-
-   
-          <div class="col-lg-4 col-md-6 portfolio-item filter-r">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/r.png" class="img-fluid" alt="">
-            </div>
+          <div class="portfolio-item filter-r">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/r.png" alt="R Studio"></div>
           </div>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-excel">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/excel.png" class="img-fluid" alt="">
-            </div>
-          </div> 
-          
-          <div class="col-lg-4 col-md-6 portfolio-item filter-powerbi">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/certif.png" class="img-fluid" alt="">
-            </div>
-          </div> 
+          <div class="portfolio-item filter-excel">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/excel.png" alt="Excel"></div>
+          </div>
+          <div class="portfolio-item filter-powerbi">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/certif.png" alt="Power BI"></div>
+          </div>
+          <div class="portfolio-item filter-govtech">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/GOVSTACK_CERTIFICATE.jpg" alt="Women in GovTech Certificate"></div>
+          </div>
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
-   <!-- ======= Services Section ======= -->
-    <section id="resume1" class="resume">
-      <div class="container" data-aos="fade-up">
+    </section>
 
-        <div class="section-title">
-          <h2>Expériences professionnelles</h2>
+    <!-- EXP&Eacute;RIENCES PROFESSIONNELLES -->
+    <section id="experiences" class="s s--alt">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">04</p>
+        <h2 class="s-title">Exp&eacute;riences professionnelles</h2>
+
+        <!-- Sonec Africa -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Tech Lead Consultante</h3>
+            <span class="exp-period">Avr. 2026 &mdash; Sept. 2026</span>
+          </div>
+          <p class="exp-company"><a href="https://sonecafrica.com/" target="_blank">Sonec Africa</a>, C&ocirc;te d'Ivoire (temps partiel)</p>
+          <p class="exp-desc"><strong>Mission :</strong> Concevoir et mettre en production une application d'apprentissage IA pour des &eacute;tudiants ivoiriens.</p>
+          <div class="kpi-band">
+            <div class="kpi-item">
+              <p class="kpi-num">6 mois</p>
+              <p class="kpi-label">Application livr&eacute;e</p>
+            </div>
+          </div>
+          <ul class="exp-list">
+            <li>Architecture compl&egrave;te : RAG, workflows multi-agents, APIs FastAPI, base de donn&eacute;es, authentification</li>
+            <li>Agents Python cr&eacute;ant des contenus p&eacute;dagogiques align&eacute;s sur les programmes et des parcours personnalis&eacute;s</li>
+            <li>&Eacute;valuation des mod&egrave;les avec MLflow, r&eacute;duction des hallucinations, distillation</li>
+            <li>Pilotage de l'&eacute;quipe technique en Agile (daily, sprint review, demo) et reporting au comit&eacute; ex&eacute;cutif</li>
+          </ul>
         </div>
 
-          <div class="row">
-          <div class="col-lg-2.5">
-            <div class="resume-item">
-              <h4>Data Scientist</h4>
-              <h5>Depuis Novembre 2023</h5>
-              <p><em>Safran, Paris</em></p>
-               <ul>
-                 <li> Agent IA génératif : automatisation du traitement des incidents qualité et des recommandations clients</li>
-                 <li> Chatbot RAG : accès intuitif à la documentation process en langage naturel. </li>
-                 <li> Analyse causale et détection d'anomalies : Machine learning (XGBoost, Random Forest, AdaBoost...) et modèle d'explicabilité (SHAP..) </li>
-                 <li> Extraction de données multi-format : OCR + LLM pour documents techniques.</li>
-                 <li> Assitance au troubleshooting avec l'analyse de données textuelles (ModernBert).</li>
-                 <li> Prédictions de durée de vie et aide à la maintenance  (Test statistiques, Anova, Regression, Monte Carlo...).</li>
-                 <li> Gestion de projet, mentorat et formation</li>
-               </ul>
+        <!-- Docfira -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Co-Fondatrice</h3>
+            <span class="exp-period">Depuis 2025</span>
+          </div>
+          <p class="exp-company"><a href="https://www.docfira.com/" target="_blank">Docfira</a> &mdash; HealthTech Startup, Paris / Afrique (temps partiel)</p>
+          <ul class="exp-list">
+            <li>Conception d'une application de sant&eacute; num&eacute;rique connectant des patients atteints de maladies chroniques &agrave; des professionnels de sant&eacute; en C&ocirc;te d'Ivoire, au Cameroun, au Burkina Faso et en Guin&eacute;e-Bissau</li>
+            <li>Pilotage de la phase Proof of Concept : &eacute;tude de march&eacute;, d&eacute;veloppement d'un prototype fonctionnel, tests utilisateurs et r&eacute;daction du business plan</li>
+            <li>Identification de partenaires cl&eacute;s (ONG, professionnels de sant&eacute;) et contribution aux premi&egrave;res lev&eacute;es de fonds pour le d&eacute;ploiement &agrave; grande &eacute;chelle</li>
+          </ul>
+        </div>
 
+        <!-- Safran -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Data Scientist</h3>
+            <span class="exp-period">Juin 2022 &mdash; Aujourd'hui</span>
+          </div>
+          <p class="exp-company"><a href="https://www.safran-group.com/fr" target="_blank">Safran Aircraft Engines</a>, Paris</p>
+          <p class="exp-desc"><strong>Mission :</strong> Concevoir, d&eacute;ployer et monitorer des solutions statistiques, Machine Learning et IA g&eacute;n&eacute;rative pour la fiabilit&eacute; des moteurs, la gestion qualit&eacute; et le support interne.</p>
+          <div class="kpi-band">
+            <div class="kpi-item">
+              <p class="kpi-num">+100&nbsp;K&euro;</p>
+              <p class="kpi-label">&eacute;conomis&eacute;s en licences (application fiabilit&eacute;)</p>
             </div>
-          </div> 
-        <div class="row">
-          <div class="col-lg-2.5">
-            <div class="resume-item">
-              <h4>Data Scientist</h4>
-              <h5>Septembre 2022 - Août 2023</h5>
-              <p><em>Safran, Bordes</em></p>
-               <ul>
-                 <li> Implémentation de portail web pour la mise en production des modèles statistiques </li>
-                 <li> Mise en place d'alertes automatiques en temps réel afin de surveiller les performances des moteurs avec des modèles  de Machine Learning </li>
-                 <li> Veille sur les techniques d'explicabilité pour les "Wide Data" </li>
+            <div class="kpi-item">
+              <p class="kpi-num">8&nbsp;000+</p>
+              <p class="kpi-label">collaborateurs, chatbot RAG &minus;50&nbsp;% support</p>
+            </div>
+            <div class="kpi-item">
+              <p class="kpi-num">&minus;7&nbsp;jours</p>
+              <p class="kpi-label">de traitement qualit&eacute; pour 1&nbsp;400 utilisateurs</p>
+            </div>
+          </div>
+          <div class="exp-body-cols">
+            <div>
+              <p class="exp-sub-title">IA g&eacute;n&eacute;rative et agents</p>
+              <ul class="exp-list" style="margin-bottom:20px;">
+                <li>Chatbots RAG sur tous types de documents (chunking intelligent, m&eacute;tadonn&eacute;es, index)</li>
+                <li>Embeddings multilingues et gestion de la base vectorielle</li>
+                <li>Agents de r&eacute;cup&eacute;ration de cas similaires, d'alerte sur les d&eacute;rives et de classification d'&eacute;v&eacute;nements</li>
+                <li>Classification avec LLM et Jev (mod&egrave;le de d&eacute;cision &agrave; sorties structur&eacute;es avec probabilit&eacute;s)</li>
               </ul>
-
-            </div>
-          </div>
-          <div class="col-lg-2.5">
-            <div class="resume-item">
-              <h4>Data Analyst</h4>
-              <h5>Juin 2022 - Août 2022</h5>
-              <p><em>Safran, Bordes</em></p>
-               <ul>
-                 <li> Conception et design de Dashboards avec Power BI </li>
-                 <li> Création d'exports automatiques et compilation des données avec Teexma </li>
-                 <li> Mise en place d'intranet pour le département avec Sharepoint </li>
-                 <li> Test de montée de version d'application </li>
-              </ul>
-
-            </div>
-          </div>
-          <div class="col-lg-2.5">
-            <div class="resume-item">
-              <h4>Web Analyst</h4>
-              <h5>Juin 2021 -Juillet 2021</h5>
-              <p><em>Prof en Poche, Pau </em></p>
-              <ul>
-                <li>Analyse statistique de site internet avec Google Analytics</li>
-                <li>Gestion et analyse d'une base de données avec Learning Locker et MongoDB</li>
-                <li>Mise en place et tenue hebdomadaire de tableaux de bords statistiques avec Google data studio</li>
+              <p class="exp-sub-title">Machine Learning et Deep Learning</p>
+              <ul class="exp-list">
+                <li>Classification de textes h&eacute;t&eacute;rog&egrave;nes avec des mod&egrave;les de la famille BERT (ModernBert)</li>
+                <li>Analyse causale sur grands jeux de donn&eacute;es (XGBoost, Random Forest, AdaBoost)</li>
+                <li>Explicabilit&eacute; des mod&egrave;les avec SHAP</li>
+                <li>D&eacute;tection d'images hors distribution avec ResNet</li>
+                <li>Extraction de donn&eacute;es multi-format : OCR + LLM pour documents techniques</li>
               </ul>
             </div>
+            <div>
+              <p class="exp-sub-title">Statistiques</p>
+              <ul class="exp-list" style="margin-bottom:20px;">
+                <li>D&eacute;tection de d&eacute;rives avec le contr&ocirc;le statistique des proc&eacute;d&eacute;s</li>
+                <li>Estimation des taux de d&eacute;faillance avec les mod&egrave;les de fiabilit&eacute; Weibull</li>
+                <li>Tests statistiques, Anova, R&eacute;gression, Monte Carlo</li>
+              </ul>
+              <p class="exp-sub-title">D&eacute;ploiement et &eacute;valuation</p>
+              <ul class="exp-list" style="margin-bottom:20px;">
+                <li>Conteneurisation des applications avec Docker</li>
+                <li>D&eacute;ploiement des mod&egrave;les avec GitLab CI/CD</li>
+                <li>&Eacute;valuation des chatbots et LLMs avec MLflow (LLM-as-judge)</li>
+                <li>Mise en place de portails web pour les mod&egrave;les statistiques</li>
+                <li>Alertes automatiques en temps r&eacute;el sur les performances moteur</li>
+              </ul>
+              <p class="exp-sub-title">Gestion de projet et formation</p>
+              <ul class="exp-list">
+                <li>Gestion de projet, mentorat et formation</li>
+                <li>Repr&eacute;sentation Safran &agrave; l'AWS Summit</li>
+                <li>Animation de cours de statistiques avanc&eacute;es et de journ&eacute;es de sensibilisation &agrave; l'IA</li>
+              </ul>
             </div>
           </div>
+        </div>
+
+        <!-- Prof en Poche -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Web Analyst</h3>
+            <span class="exp-period">Juin &mdash; Juill. 2021</span>
+          </div>
+          <p class="exp-company"><a href="https://www.linkedin.com/company/prof-en-poche/posts/?feedView=all" target="_blank">Prof en Poche</a>, Pau</p>
+          <ul class="exp-list">
+            <li>Analyse statistique de site internet avec Google Analytics</li>
+            <li>Gestion et analyse d'une base de donn&eacute;es avec Learning Locker et MongoDB</li>
+            <li>Mise en place et tenue hebdomadaire de tableaux de bords avec Google Data Studio</li>
+          </ul>
         </div>
 
       </div>
-  
-    </section><!-- End Services Section -->
-  <!-- ======= Testimonials Section ======= -->
-    <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
+    </section>
 
-       <div class="section-title">
-          <h2>Projets académiques et personnels </h2>
+    <!-- PROJETS ACADÉMiques -->
+    <section id="projets" class="s">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">05</p>
+        <h2 class="s-title">Projets acad&eacute;miques</h2>
+        <p style="font-size:14px;color:var(--text-muted);font-style:italic;margin-bottom:40px;">Cliquez sur les titres des diff&eacute;rents projets pour un aper&ccedil;u.</p>
+        <div class="proj-grid">
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#eff6ff;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="8" width="3" height="7" fill="#2563eb"/><rect x="6" y="4" width="3" height="11" fill="#2563eb"/><rect x="11" y="1" width="3" height="14" fill="#2563eb"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="https://noellieaka.shinyapps.io/Shiny/" target="_blank">Etude du profil des data scientists avec RSHINY</a></h4>
+            <p class="proj-desc">Cette application Rshiny permet de visualiser le profil des personnes exer&ccedil;ant le m&eacute;tier de la data science en 2020</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fff7ed;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#d97706" stroke-width="1.5" fill="none"/><line x1="5" y1="8" x2="11" y2="8" stroke="#d97706" stroke-width="1.5"/><line x1="8" y1="5" x2="8" y2="11" stroke="#d97706" stroke-width="1.5"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="Projet_DL (1).html" class="portfolio-details-lightbox" data-glightbox="type: external" title="D&eacute;tails">Classification de chiffres manuscrits avec du Deep Learning</a></h4>
+            <p class="proj-desc">D&eacute;couvrez dans ce Jupyter Notebook comment classifier les images de chiffres manuscrits &agrave; l'aide du perceptron multi-couches</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fdf4ff;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5" stroke="#9333ea" stroke-width="1.5" fill="none"/><line x1="5" y1="5" x2="11" y2="5" stroke="#9333ea" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#9333ea" stroke-width="1"/><line x1="5" y1="11" x2="9" y2="11" stroke="#9333ea" stroke-width="1"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="https://noellieaka.shinyapps.io/ETUDIANTS/" target="_blank">Statistiques sur les &eacute;tudiants de Pau de 2014&ndash;2021</a></h4>
+            <p class="proj-desc">Cette application Rshiny permet de conna&icirc;tre l'&eacute;volution du nombre d'&eacute;tudiants de Pau en fonction de plusieurs variables</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fff1f2;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="2,13 5,8 9,10 14,3" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="Regressions_Penalisees.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="D&eacute;tails">R&eacute;gressions p&eacute;nalis&eacute;es : Ridge et Lasso avec Rmarkdown</a></h4>
+            <p class="proj-desc">Ce mini-projet permet de d&eacute;couvrir les techniques de r&eacute;gularisation : Ridge et Lasso &agrave; travers leurs d&eacute;finitions et une application.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#f0fdf4;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="4" width="12" height="10" rx="1.5" stroke="#16a34a" stroke-width="1.5" fill="none"/><line x1="5" y1="8" x2="11" y2="8" stroke="#16a34a" stroke-width="1"/><line x1="5" y1="11" x2="9" y2="11" stroke="#16a34a" stroke-width="1"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="https://app.powerbi.com/reportEmbed?reportId=5414d826-a218-4288-b036-cb155237f172&autoAuth=true&ctid=0af87170-c841-446d-ae88-90b8aefe4f81" target="_blank">Dashboard Supply Chain avec Power BI</a></h4>
+            <p class="proj-desc">Ce tableau de bord permet de visualiser l'&eacute;tat de sant&eacute; de la Supply Chain d'une entreprise sp&eacute;cialis&eacute;e dans la vente en ligne.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fefce8;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="#ca8a04" stroke-width="1.5" fill="none"/><path d="M8 8 L8 2" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"/><path d="M8 8 L13 11" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="Projet.pdf" target="_blank">Clustering avec DBSCAN</a></h4>
+            <p class="proj-desc">Pr&eacute;sentation d'algorithme de partitionnement avec DBSCAN (density-based spatial clustering of applications with noise).</p>
+          </div>
+
         </div>
-        <center> <p><i>Cliquez sur les titres des différents projets pour un aperçu.</i></p></center> 
-        <div class="row">
+      </div>
+    </section>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bi bi-bar-chart-fill"></i>
-              </div>
-              <h4><a href="https://noellieaka.shinyapps.io/Shiny/" class="portfolio-details-lightbox" data-glightbox="type: external" title=" Détails"> Etude du profil des data scientists avec RSHINY</a></h4>
-              <p>Cette application Rshiny permet de visualiser le profil des personnes exerçant le métier de la data science en 2020</p>
+    <!-- B&Eacute;N&Eacute;VOLAT -->
+    <section id="benevolat" class="s s--alt">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">06</p>
+        <h2 class="s-title">Exp&eacute;riences b&eacute;n&eacute;voles &amp; associatives</h2>
+        <div class="vol-grid">
+
+          <div class="vol-card">
+            <h4 class="vol-title">The AI Collective Abidjan</h4>
+            <p class="vol-period">Tech Lead (b&eacute;n&eacute;vole) &mdash; Depuis f&eacute;vrier 2026</p>
+            <p class="vol-desc">Communaut&eacute; ivoirienne de praticiens IA &amp; Data. D&eacute;finition de la vision technique, f&eacute;d&eacute;ration des acteurs (data scientists, ing&eacute;nieurs, hubs, incubateurs), conception d'&eacute;v&eacute;nements adapt&eacute;s au contexte local et production de ressources accessibles &agrave; tous.</p>
+            <div class="vol-links">
+              <a href="https://luma.com/71t7s9x9" target="_blank">&#8594; AI Abidjan</a>
+              <a href="https://luma.com/aic-WomeninAIAbidjan" target="_blank">&#8594; Women in AI Abidjan</a>
+              <a href="https://luma.com/aic-abj-aiinpractice" target="_blank">&#8594; AI in Practice Abidjan</a>
+              <a href="https://luma.com/h4h-abidjan" target="_blank">&#8594; Hack for Humanity Abidjan</a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bi bi-123"></i>
-              </div>
-              <h4><a href="Projet_DL (1).html" class="portfolio-details-lightbox" data-glightbox="type: external" title=" Détails">Classification de chiffres manuscrits avec du Deep Learning</a></h4>
-              <p>Découvrez dans ce Jupyter Notebook comment classifier les images de chiffres manuscrits à l'aide du perceptron multi-couches, l'une des plus vieilles approches du Deep Learning. </p>
+          <div class="vol-card">
+            <h4 class="vol-title">Finaliste &mdash; Women in GovTech Challenge</h4>
+            <p class="vol-period">F&eacute;vr. &mdash; Avr. 2026</p>
+            <p class="vol-desc">Programme port&eacute; par l'ONU (ITU, PNUD) et la Banque Mondiale. S&eacute;lectionn&eacute;e parmi 1&nbsp;000+ candidates de 50 pays. Projet : num&eacute;risation des dipl&ocirc;mes en C&ocirc;te d'Ivoire (&eacute;quipe 100% f&eacute;minine). Application des principes DPI, gouvernance IA, privacy-by-design et &eacute;thique des donn&eacute;es.</p>
+            <div class="vol-links">
+              <a href="https://govstack.global/women-in-govtech-challenge/" target="_blank">&#8594; GovStack Global</a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-               <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bi bi-book"></i>
-              </div>
-              <h4><a href="https://noellieaka.shinyapps.io/ETUDIANTS/" class="portfolio-details-lightbox" data-glightbox="type: external" title=" Détails">Statistiques sur les étudiants de Pau de 2014-2021</a></h4>
-              <p>Cette application Rshiny permet de connaître l'évolution du nombre d'étudiants de Pau en fonction de plusieurs variables (type de formation, genre, nationalité..)</p>
-            </div>
+          <div class="vol-card">
+            <h4 class="vol-title">Responsable de Cap Orientation</h4>
+            <p class="vol-period">Depuis 2023</p>
+            <p class="vol-desc">Programme de bourse et d'accompagnement pour les &eacute;tudiants d&eacute;favoris&eacute;s.</p>
           </div>
 
+          <div class="vol-card">
+            <h4 class="vol-title">Pr&eacute;sidente de l'association des &eacute;tudiants Ivoiriens de Pau</h4>
+            <p class="vol-period">2020 &mdash; 2021</p>
+          </div>
+
+          <div class="vol-card">
+            <h4 class="vol-title">Tutrice scolaire</h4>
+            <p class="vol-period">2019 &mdash; 2020</p>
+          </div>
 
         </div>
       </div>
-      
-      <div class="row">
+    </section>
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box iconbox-red">
-            <div class="icon">
-              <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-              </svg>
-              <i class="bi bi-graph-down"></i>
-            </div>
-            <h4><a href="Regressions_Penalisees.html" class="portfolio-details-lightbox" data-glightbox="type: external" title=" Détails"> Regression pénalisées : Ridge et Lasso avec Rmarkdown</a></h4>
-            <p>Ce mini-pojet permet de découvrir les techniques de régularisation : Ridge et Lasso à travers leurs définition et une application.</p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box iconbox-brown">
-            <div class="icon">
-              <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-              </svg>
-              <i class="bi bi-clipboard-data"></i>
-            </div>
-            <h4><a href="https://app.powerbi.com/reportEmbed?reportId=5414d826-a218-4288-b036-cb155237f172&autoAuth=true&ctid=0af87170-c841-446d-ae88-90b8aefe4f81" class="portfolio-details-lightbox" data-glightbox="type: external" title=" Détails"> Dashboard Supply Chain avec Power BI</a></h4>
-            <p>Ce tableau de bord permet de visualiser l'état de santé de la Supply Chain d'une entreprise spécialisée dans la vente en ligne. </p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box iconbox-yellow ">
-            <div class="icon">
-              <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-              </svg>
-              <i class="bi bi-pie-chart"></i>
-            </div>
-            <h4><a href="Projet.pdf" class="portfolio-details-lightbox" data-glightbox="type: external" title=" Détails">Clustering avec DBSCAN</a></h4>
-            <p> Présentation d'algorithme de partitionnement avec DBSCAN (density-based spatial clustering of applications with noise). </p>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Testimonials Section -->
- 
+  </main>
 
-<!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Projets personnels et expériences associatives</h2>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-file-medical-fill"></i>
-              <p><strong>Co-Founder DocFira - Health StartUp </strong></p>
-              <p>Depuis 2025</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-person-workspace"></i>
-              <p><strong>Responsable de Cap Orientation - Programme de bourse pour les étudiants désoeuvrés</strong></p>
-              <p>Depuis 2023</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-heart"></i>
-             <p><strong>Présidente de l'association des étudiants Ivoiriens de Pau </strong></p>
-              <p>2020-2021</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-pencil-square"></i>
-              <p><strong>Tutrice scolaire</strong></p>
-              <p>2019-2020</p>
-            </div>
-          </div>
-          
-
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-
- 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
+  <!-- FOOTER -->
   <footer id="footer">
-    <div class="container">
-      <h3>Noellie Aka</h3>
-      <p>Se former, servir et inspirer.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/noellie-aka-906801196/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <p><i class="bi bi-phone"></i>:+33(0)636473001<br> <i class="bi bi-envelope"></i>:akanoellie@yahoo.com</p>
-
-  
-
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: [license-url] -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+    <div class="wrap">
+      <h3 class="footer-name">Noellie Aka</h3>
+      <p class="footer-tagline">Se former, servir et inspirer.</p>
+      <div class="footer-contact">
+        <a href="https://www.linkedin.com/in/noellie-aka-906801196/" target="_blank">LinkedIn &#8599;</a>
+        <span>+33(0)636473001</span>
+        <span>akanoellie@yahoo.com</span>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Retour en haut">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-  <!-- Vendor JS Files -->
+  <!-- Scripts -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -499,11 +736,23 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script>
+    /* Reinit Isotope for the CSS grid layout */
+    window.addEventListener('load', function() {
+      var grid = document.querySelector('.portfolio-container');
+      if (!grid) return;
+      var iso = new Isotope(grid, { itemSelector: '.portfolio-item', layoutMode: 'fitRows' });
+      document.querySelectorAll('#portfolio-flters li').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('#portfolio-flters li').forEach(function(el) { el.classList.remove('filter-active'); });
+          this.classList.add('filter-active');
+          iso.arrange({ filter: this.getAttribute('data-filter') });
+        });
+      });
+    });
+  </script>
 
+</body>
 </html>

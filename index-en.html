@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio &mdash; Noellie Aka</title>
+  <meta name="description" content="Portfolio of Noellie Aka, Data Scientist specialised in AI and Machine Learning.">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Vendors -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <style>
+    /* ===========================================
+       NOELLIE AKA &mdash; PORTFOLIO v2 (EN)
+    =========================================== */
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-dark: #0a0f1e;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --accent: #2563eb;
+      --accent-bg: #eff6ff;
+      --border: #e2e8f0;
+      --radius: 10px;
+      --radius-lg: 12px;
+      --font-head: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --max-w: 1200px;
+      --pad: clamp(20px, 5vw, 60px);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 62px;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); }
+    a { color: var(--accent); }
+    a:hover { color: #1d4ed8; }
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 4px; }
+
+    /* Hide the old sidebar template */
+    #header, .mobile-nav-toggle, #preloader { display: none !important; }
+
+    /* ---- Container ---- */
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ---- Sections ---- */
+    .s { padding: 80px 0; }
+    .s--alt { background: var(--bg-alt); }
+
+    .s-num {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    }
+    .s-title {
+      font-size: clamp(26px, 3vw, 32px); font-weight: 700;
+      color: #0f172a; letter-spacing: -0.5px; margin-bottom: 40px; line-height: 1.1;
+    }
+
+    /* ---- TOP NAV ---- */
+    .topnav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1050;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: 62px; display: flex; align-items: center;
+      padding: 0 var(--pad); justify-content: space-between;
+    }
+    .topnav-logo {
+      font-family: var(--font-head); font-weight: 700; font-size: 15px;
+      color: #0f172a !important; letter-spacing: -0.3px; text-decoration: none !important;
+    }
+    .topnav-links {
+      display: flex; gap: 24px; align-items: center;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .topnav-links a {
+      font-size: 13px; font-weight: 500; color: var(--text-muted);
+      text-decoration: none; transition: color 0.15s; white-space: nowrap;
+    }
+    .topnav-links a:hover,
+    .topnav-links a.active { color: var(--accent); }
+    .topnav-lang { display: flex; gap: 6px; align-items: center; font-size: 13px; font-weight: 600; }
+    .topnav-lang a { text-decoration: none; }
+    .topnav-lang a.active { color: var(--accent); }
+    .topnav-lang a:not(.active) { color: var(--text-light); }
+    .topnav-lang-sep { color: var(--border); }
+    @media (max-width: 1024px) { .topnav-links { display: none; } }
+
+    /* ---- HERO ---- */
+    #hero { background: var(--bg-dark); padding: 90px 0; }
+    #hero .hero-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #3b82f6; margin-bottom: 22px;
+    }
+    #hero h1 {
+      font-size: clamp(48px, 7vw, 80px); font-weight: 700;
+      letter-spacing: -3px; color: white; line-height: 0.9; margin-bottom: 32px;
+    }
+    .hero-rule { width: 44px; height: 2px; background: var(--accent); margin-bottom: 32px; }
+    #hero .hero-intro {
+      font-size: 15px; color: rgba(255,255,255,0.65);
+      line-height: 1.85; max-width: 600px; margin-bottom: 32px;
+    }
+    .hero-motto { border-left: 2px solid var(--accent); padding-left: 20px; max-width: 560px; }
+    .hero-motto p {
+      font-size: 14px; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.8; margin: 0;
+    }
+    .hero-motto strong { font-style: normal; color: rgba(255,255,255,0.88); }
+    #hero .typed-cursor { color: rgba(255,255,255,0.5); }
+
+    /* ---- SKILLS ---- */
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1024px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .skills-grid { grid-template-columns: 1fr; } }
+
+    .skill-card {
+      background: var(--bg-alt); border-radius: var(--radius);
+      padding: 20px; border-top: 2px solid var(--border);
+    }
+    .s--alt .skill-card { background: white; }
+    .skill-card.c1 { border-top-color: #2563eb; }
+    .skill-card.c2 { border-top-color: #7c3aed; }
+    .skill-card.c3 { border-top-color: #059669; }
+    .skill-card.c4 { border-top-color: #d97706; }
+    .skill-card-label {
+      font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 14px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      background: white; border: 1px solid var(--border);
+      border-radius: 100px; padding: 4px 11px; font-size: 12px; color: #334155;
+    }
+
+    /* ---- EDUCATION ---- */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 768px) { .edu-grid { grid-template-columns: 1fr; } }
+
+    .edu-card {
+      background: white; padding: 28px;
+      border-radius: var(--radius-lg); border: 1px solid var(--border);
+    }
+    .edu-year { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 8px; }
+    .edu-title { font-size: 17px; font-weight: 700; color: #0f172a; line-height: 1.4; margin-bottom: 6px; }
+    .edu-title a { color: inherit; text-decoration: none; }
+    .edu-title a:hover { color: var(--accent); }
+    .edu-school { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+    .edu-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 600; color: #92400e;
+      background: #fef3c7; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .edu-list { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+    .edu-list li { margin-bottom: 4px; }
+
+    /* ---- CERTIFICATES ---- */
+    #portfolio-flters {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      list-style: none; padding: 0; margin: 0 0 32px;
+    }
+    #portfolio-flters li {
+      padding: 6px 15px; border-radius: 100px;
+      border: 1px solid var(--border); background: white;
+      color: var(--text-muted); font-size: 12px; font-weight: 500;
+      cursor: pointer; transition: all 0.15s; user-select: none;
+    }
+    #portfolio-flters li:hover { border-color: var(--accent); color: var(--accent); }
+    #portfolio-flters li.filter-active { background: var(--accent); color: white; border-color: var(--accent); }
+
+    .portfolio-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 768px) { .portfolio-container { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .portfolio-container { grid-template-columns: 1fr; } }
+
+    .portfolio-item { margin: 0; }
+    .portfolio-wrap {
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .portfolio-wrap img { width: 100%; height: 100%; display: block; object-fit: contain; background: #f8fafc; }
+
+    /* ---- EXPERIENCE ---- */
+    .exp-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px; margin-bottom: 20px;
+    }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+    .exp-role { font-size: 20px; font-weight: 700; color: #0f172a; margin: 0; }
+    .exp-period { font-size: 13px; color: var(--text-muted); font-weight: 500; white-space: nowrap; margin-left: 20px; flex-shrink: 0; }
+    .exp-company { font-size: 14px; font-weight: 500; color: var(--accent); margin-bottom: 14px; }
+    .exp-company a { color: inherit; text-decoration: none; }
+    .exp-company a:hover { text-decoration: underline; }
+    .exp-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+    .exp-desc strong { color: #334155; font-weight: 600; }
+    .exp-list { font-size: 13px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+    .exp-list li { margin-bottom: 3px; }
+
+    .kpi-band { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    .kpi-item { flex: 1; min-width: 180px; background: var(--accent-bg); border-radius: 8px; padding: 14px 18px; }
+    .kpi-num {
+      font-family: var(--font-head); font-size: 24px; font-weight: 700;
+      color: var(--accent); line-height: 1; margin-bottom: 5px;
+    }
+    .kpi-label { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+    .exp-body-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media (max-width: 768px) { .exp-body-cols { grid-template-columns: 1fr; } }
+
+    .exp-sub-title {
+      font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: #334155; margin: 0 0 8px;
+    }
+
+    /* ---- PROJECTS ---- */
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .proj-grid { grid-template-columns: 1fr; } }
+
+    .proj-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; transition: box-shadow 0.2s;
+    }
+    .proj-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .proj-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .proj-title { font-size: 14.5px; font-weight: 700; color: #0f172a; margin-bottom: 8px; line-height: 1.4; }
+    .proj-title a { color: inherit; text-decoration: none; }
+    .proj-title a:hover { color: var(--accent); }
+    .proj-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    /* ---- VOLUNTEER ---- */
+    .vol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .vol-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .vol-grid { grid-template-columns: 1fr; } }
+
+    .vol-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .vol-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; line-height: 1.4; }
+    .vol-period { font-size: 12px; color: var(--text-light); margin-bottom: 12px; }
+    .vol-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .vol-links { display: flex; flex-direction: column; gap: 5px; }
+    .vol-links a { font-size: 12.5px; color: var(--accent); text-decoration: none; }
+    .vol-links a:hover { text-decoration: underline; }
+
+    /* ---- FOOTER ---- */
+    #footer { background: var(--bg-dark); padding: 52px 0; }
+    .footer-name { font-size: 22px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+    .footer-contact { display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
+    .footer-contact a,
+    .footer-contact span { font-size: 13.5px; color: rgba(255,255,255,0.55); font-weight: 500; }
+    .footer-contact a { text-decoration: none; }
+    .footer-contact a:hover { color: rgba(255,255,255,0.85); }
+
+    /* ---- BACK TO TOP ---- */
+    .back-to-top {
+      position: fixed; bottom: 24px; right: 24px; z-index: 996;
+      background: var(--accent); color: white;
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s; text-decoration: none;
+    }
+    .back-to-top.active { opacity: 1; }
+    .back-to-top:hover { background: #1d4ed8; color: white; }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP NAV -->
+  <nav class="topnav">
+    <a href="#hero" class="topnav-logo scrollto">Noellie Aka</a>
+    <ul class="topnav-links">
+      <li><a href="#competences" class="scrollto">Skills</a></li>
+      <li><a href="#formations" class="scrollto">Education</a></li>
+      <li><a href="#certificats" class="scrollto">Certificates</a></li>
+      <li><a href="#experiences" class="scrollto">Experience</a></li>
+      <li><a href="#projets" class="scrollto">Projects</a></li>
+      <li><a href="#benevolat" class="scrollto">Volunteering</a></li>
+    </ul>
+    <div class="topnav-lang">
+      <a href="index.html">FR</a>
+      <span class="topnav-lang-sep">|</span>
+      <a href="index-en.html" class="active">EN</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap" data-aos="fade-up" data-aos-delay="100">
+      <p class="hero-eyebrow">I am <span class="typed" data-typed-items="a Data Scientist,passionate about AI,open to new opportunities"></span></p>
+      <h1>Noellie<br>Aka</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-intro">
+        Hello, dear visitor, and welcome to my portfolio &#128075;&nbsp;
+        My love for mathematics and new technologies led me towards Artificial Intelligence &mdash; a field that generates tremendous excitement as its progress is striking.
+        How to meet the demands of a market facing a profession that constantly reinvents itself? For me, it comes down to research and, above all, practice.
+      </p>
+      <div class="hero-motto">
+        <p>If you work with me, remember: <strong>Usefulness before trends, reliability before perfection, and always simplicity.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- SKILLS -->
+    <section id="competences" class="s">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">01</p>
+        <h2 class="s-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card c1">
+            <p class="skill-card-label">Languages &amp; Frameworks</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">SAS</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Django</span>
+            </div>
+          </div>
+          <div class="skill-card c2">
+            <p class="skill-card-label">AI &amp; Machine Learning</p>
+            <div class="skill-tags">
+              <span class="skill-tag">LLM / GenAI</span>
+              <span class="skill-tag">RAG</span>
+              <span class="skill-tag">Multi-agent</span>
+              <span class="skill-tag">Prompt engineering</span>
+              <span class="skill-tag">Fine-tuning</span>
+              <span class="skill-tag">NLP (BERT)</span>
+              <span class="skill-tag">XGBoost</span>
+              <span class="skill-tag">SHAP</span>
+              <span class="skill-tag">ResNet</span>
+              <span class="skill-tag">OCR</span>
+            </div>
+          </div>
+          <div class="skill-card c3">
+            <p class="skill-card-label">Cloud &amp; Infrastructure</p>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">GitLab CI/CD</span>
+              <span class="skill-tag">MLflow</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Terraform</span>
+            </div>
+          </div>
+          <div class="skill-card c4">
+            <p class="skill-card-label">Visualisation &amp; Tools</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">Minitab</span>
+              <span class="skill-tag">Google Analytics</span>
+              <span class="skill-tag">HTML &amp; CSS</span>
+              <span class="skill-tag">Pack Office</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="formations" class="s s--alt">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">02</p>
+        <h2 class="s-title">Education</h2>
+        <div class="edu-grid">
+
+          <div class="edu-card">
+            <p class="edu-year">2021 &mdash; 2023</p>
+            <h3 class="edu-title">
+              <a href="https://formation.univ-pau.fr/fr/catalogue/master-XB/master-mention-mathematiques-et-applications-L3Y9AGO1/parcours-methodes-stochastiques-et-informatiques-pour-la-decision-L3Y9BRCU.html" target="_blank">Master&rsquo;s in Stochastic and Computational Decision Methods</a>
+            </h3>
+            <p class="edu-school">University of Pau and the Pays de l&rsquo;Adour</p>
+            <span class="edu-badge">&#127942; Valedictorian &mdash; highest honours &mdash; Talent&rsquo;s Academy Scholarship</span>
+            <ul class="edu-list">
+              <li>Mathematics: inferential statistics, optimisation, matrix analysis, Monte Carlo methods, reliability engineering, survival analysis, design of experiments</li>
+              <li>Computer science: data warehousing, programming, information systems design</li>
+              <li>Artificial intelligence: machine learning, data mining, deep learning</li>
+            </ul>
+          </div>
+
+          <div class="edu-card">
+            <p class="edu-year">2018 &mdash; 2021</p>
+            <h3 class="edu-title">
+              <a href="https://formation.univ-pau.fr/fr/catalogue/licence-XA/licence-mathematiques-et-informatique-appliquees-aux-sciences-humaines-et-sociales-miashs-L3VEUHIP/l1-l2-communes-l3-parcours-mathematiques-et-informatique-pour-la-decision-mid-L3VEY0SZ.html" target="_blank">Bachelor&rsquo;s in Decision-Oriented Mathematics &amp; Computer Science</a>
+            </h3>
+            <p class="edu-school">University of Pau and the Pays de l&rsquo;Adour</p>
+            <span class="edu-badge">&#127942; Valedictorian &mdash; highest honours &mdash; Talent&rsquo;s Academy Scholarship</span>
+            <ul class="edu-list">
+              <li>Mathematics: probability, statistics, algebra, optimisation</li>
+              <li>Computer science: databases, data mining, algorithmic programming</li>
+              <li>Social sciences: economics, management and accounting</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificats" class="s">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">03</p>
+        <h2 class="s-title">Certificates</h2>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;">To deepen my skills and discover new technologies, I have completed the following online courses.</p>
+
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-aws_essentials">AWS Architecting</li>
+          <li data-filter=".filter-aws_quest_cp">AWS Cloud Practitioner</li>
+          <li data-filter=".filter-app">Google Analytics</li>
+          <li data-filter=".filter-web">HTML &amp; CSS</li>
+          <li data-filter=".filter-card">Python</li>
+          <li data-filter=".filter-r">R Studio</li>
+          <li data-filter=".filter-excel">Excel</li>
+          <li data-filter=".filter-powerbi">Power BI</li>
+          <li data-filter=".filter-govtech">Women in GovTech</li>
+        </ul>
+
+        <div class="portfolio-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-item filter-aws_essentials">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/architecting_aws.png" alt="AWS Architecting"></div>
+          </div>
+          <div class="portfolio-item filter-aws_quest_cp">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/cloud_practitioner.png" alt="AWS Cloud Practitioner"></div>
+          </div>
+          <div class="portfolio-item filter-app">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/google.png" alt="Google Analytics"></div>
+          </div>
+          <div class="portfolio-item filter-web">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/html.png" alt="HTML &amp; CSS"></div>
+          </div>
+          <div class="portfolio-item filter-card">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/python.png" alt="Python"></div>
+          </div>
+          <div class="portfolio-item filter-r">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/r.png" alt="R Studio"></div>
+          </div>
+          <div class="portfolio-item filter-excel">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/excel.png" alt="Excel"></div>
+          </div>
+          <div class="portfolio-item filter-powerbi">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/certif.png" alt="Power BI"></div>
+          </div>
+          <div class="portfolio-item filter-govtech">
+            <div class="portfolio-wrap"><img src="assets/img/portfolio/GOVSTACK_CERTIFICATE.jpg" alt="Women in GovTech Certificate"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section id="experiences" class="s s--alt">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">04</p>
+        <h2 class="s-title">Professional experience</h2>
+
+        <!-- Sonec Africa -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Tech Lead Consultant</h3>
+            <span class="exp-period">Apr. 2026 &mdash; Sept. 2026</span>
+          </div>
+          <p class="exp-company"><a href="https://sonecafrica.com/" target="_blank">Sonec Africa</a>, C&ocirc;te d&rsquo;Ivoire (part-time)</p>
+          <p class="exp-desc"><strong>Mission:</strong> Design and deploy an AI-powered learning application for Ivorian students.</p>
+          <div class="kpi-band">
+            <div class="kpi-item">
+              <p class="kpi-num">6 months</p>
+              <p class="kpi-label">Application delivered</p>
+            </div>
+          </div>
+          <ul class="exp-list">
+            <li>Full-stack architecture: RAG, multi-agent workflows, FastAPI, database, authentication</li>
+            <li>Python agents generating curriculum-aligned educational content and personalised learning paths</li>
+            <li>Model evaluation with MLflow, hallucination reduction, model distillation</li>
+            <li>Agile team management (daily stand-ups, sprint reviews, demos) and C-level reporting</li>
+          </ul>
+        </div>
+
+        <!-- Docfira -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Co-Founder</h3>
+            <span class="exp-period">Since 2025</span>
+          </div>
+          <p class="exp-company"><a href="https://www.docfira.com/" target="_blank">Docfira</a> &mdash; HealthTech Startup, Paris / Africa (part-time)</p>
+          <ul class="exp-list">
+            <li>Designing a digital health application connecting chronic disease patients to healthcare professionals in C&ocirc;te d&rsquo;Ivoire, Cameroon, Burkina Faso and Guinea-Bissau</li>
+            <li>Leading the Proof of Concept phase: market research, functional prototype development, user testing and business plan writing</li>
+            <li>Identifying key partners (NGOs, healthcare professionals) and contributing to early fundraising rounds for large-scale deployment</li>
+          </ul>
+        </div>
+
+        <!-- Safran -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Data Scientist</h3>
+            <span class="exp-period">Jun. 2022 &mdash; Present</span>
+          </div>
+          <p class="exp-company"><a href="https://www.safran-group.com/fr" target="_blank">Safran Aircraft Engines</a>, Paris</p>
+          <p class="exp-desc"><strong>Mission:</strong> Design, deploy and monitor statistical, Machine Learning and generative AI solutions for engine reliability, quality management and internal support.</p>
+          <div class="kpi-band">
+            <div class="kpi-item">
+              <p class="kpi-num">+100K&euro;</p>
+              <p class="kpi-label">saved in licences (reliability app)</p>
+            </div>
+            <div class="kpi-item">
+              <p class="kpi-num">8,000+</p>
+              <p class="kpi-label">employees, RAG chatbot &minus;50&nbsp;% support</p>
+            </div>
+            <div class="kpi-item">
+              <p class="kpi-num">&minus;7 days</p>
+              <p class="kpi-label">quality processing for 1,400 users</p>
+            </div>
+          </div>
+          <div class="exp-body-cols">
+            <div>
+              <p class="exp-sub-title">Generative AI &amp; Agents</p>
+              <ul class="exp-list" style="margin-bottom:20px;">
+                <li>RAG chatbots over all document types (intelligent chunking, metadata, indexing)</li>
+                <li>Multilingual embeddings and vector database management</li>
+                <li>Agents for similar-case retrieval, drift alerting and event classification</li>
+                <li>LLM and Jev classification (decision model with structured outputs and probabilities)</li>
+              </ul>
+              <p class="exp-sub-title">Machine Learning &amp; Deep Learning</p>
+              <ul class="exp-list">
+                <li>Heterogeneous text classification with BERT-family models (ModernBert)</li>
+                <li>Causal analysis on large datasets (XGBoost, Random Forest, AdaBoost)</li>
+                <li>Model explainability with SHAP</li>
+                <li>Out-of-distribution image detection with ResNet</li>
+                <li>Multi-format data extraction: OCR + LLM for technical documents</li>
+              </ul>
+            </div>
+            <div>
+              <p class="exp-sub-title">Statistics</p>
+              <ul class="exp-list" style="margin-bottom:20px;">
+                <li>Drift detection with statistical process control</li>
+                <li>Failure rate estimation with Weibull reliability models</li>
+                <li>Statistical tests, ANOVA, regression, Monte Carlo</li>
+              </ul>
+              <p class="exp-sub-title">Deployment &amp; Evaluation</p>
+              <ul class="exp-list" style="margin-bottom:20px;">
+                <li>Application containerisation with Docker</li>
+                <li>Model deployment with GitLab CI/CD</li>
+                <li>Chatbot and LLM evaluation with MLflow (LLM-as-judge)</li>
+                <li>Web portals for statistical models</li>
+                <li>Real-time automated engine performance alerts</li>
+              </ul>
+              <p class="exp-sub-title">Project Management &amp; Training</p>
+              <ul class="exp-list">
+                <li>Project management, mentoring and training</li>
+                <li>Safran representative at the AWS Summit</li>
+                <li>Teaching advanced statistics courses and AI awareness workshops</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prof en Poche -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-role">Web Analyst</h3>
+            <span class="exp-period">Jun. &mdash; Jul. 2021</span>
+          </div>
+          <p class="exp-company"><a href="https://www.linkedin.com/company/prof-en-poche/posts/?feedView=all" target="_blank">Prof en Poche</a>, Pau</p>
+          <ul class="exp-list">
+            <li>Statistical website analysis with Google Analytics</li>
+            <li>Database management and analysis with Learning Locker and MongoDB</li>
+            <li>Weekly dashboard management with Google Data Studio</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACADEMIC PROJECTS -->
+    <section id="projets" class="s">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">05</p>
+        <h2 class="s-title">Academic projects</h2>
+        <p style="font-size:14px;color:var(--text-muted);font-style:italic;margin-bottom:40px;">Click on the project titles for a preview.</p>
+        <div class="proj-grid">
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#eff6ff;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="8" width="3" height="7" fill="#2563eb"/><rect x="6" y="4" width="3" height="11" fill="#2563eb"/><rect x="11" y="1" width="3" height="14" fill="#2563eb"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="https://noellieaka.shinyapps.io/Shiny/" target="_blank">Data scientist profile study with RSHINY</a></h4>
+            <p class="proj-desc">This Rshiny application visualises the profile of people working in data science in 2020.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fff7ed;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#d97706" stroke-width="1.5" fill="none"/><line x1="5" y1="8" x2="11" y2="8" stroke="#d97706" stroke-width="1.5"/><line x1="8" y1="5" x2="8" y2="11" stroke="#d97706" stroke-width="1.5"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="Projet_DL (1).html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Details">Handwritten digit classification with Deep Learning</a></h4>
+            <p class="proj-desc">This Jupyter Notebook shows how to classify handwritten digit images using a multi-layer perceptron.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fdf4ff;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="1.5" stroke="#9333ea" stroke-width="1.5" fill="none"/><line x1="5" y1="5" x2="11" y2="5" stroke="#9333ea" stroke-width="1"/><line x1="5" y1="8" x2="11" y2="8" stroke="#9333ea" stroke-width="1"/><line x1="5" y1="11" x2="9" y2="11" stroke="#9333ea" stroke-width="1"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="https://noellieaka.shinyapps.io/ETUDIANTS/" target="_blank">Statistics on Pau students 2014&ndash;2021</a></h4>
+            <p class="proj-desc">This Rshiny application tracks the evolution of the student population in Pau by various variables.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fff1f2;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><polyline points="2,13 5,8 9,10 14,3" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="Regressions_Penalisees.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Details">Penalised regressions: Ridge and Lasso with Rmarkdown</a></h4>
+            <p class="proj-desc">This mini-project introduces regularisation techniques &mdash; Ridge and Lasso &mdash; through definitions and a practical application.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#f0fdf4;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="4" width="12" height="10" rx="1.5" stroke="#16a34a" stroke-width="1.5" fill="none"/><line x1="5" y1="8" x2="11" y2="8" stroke="#16a34a" stroke-width="1"/><line x1="5" y1="11" x2="9" y2="11" stroke="#16a34a" stroke-width="1"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="https://app.powerbi.com/reportEmbed?reportId=5414d826-a218-4288-b036-cb155237f172&autoAuth=true&ctid=0af87170-c841-446d-ae88-90b8aefe4f81" target="_blank">Supply Chain dashboard with Power BI</a></h4>
+            <p class="proj-desc">This dashboard visualises the supply chain health of an e-commerce company.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-icon" style="background:#fefce8;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="#ca8a04" stroke-width="1.5" fill="none"/><path d="M8 8 L8 2" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"/><path d="M8 8 L13 11" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h4 class="proj-title"><a href="Projet.pdf" target="_blank">Clustering with DBSCAN</a></h4>
+            <p class="proj-desc">Presentation of the DBSCAN partitioning algorithm (density-based spatial clustering of applications with noise).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEERING -->
+    <section id="benevolat" class="s s--alt">
+      <div class="wrap" data-aos="fade-up">
+        <p class="s-num">06</p>
+        <h2 class="s-title">Volunteering &amp; community involvement</h2>
+        <div class="vol-grid">
+
+          <div class="vol-card">
+            <h4 class="vol-title">The AI Collective Abidjan</h4>
+            <p class="vol-period">Tech Lead (volunteer) &mdash; Since February 2026</p>
+            <p class="vol-desc">Ivorian community of AI &amp; Data practitioners. Defining the technical vision, connecting stakeholders (data scientists, engineers, hubs, incubators), designing locally relevant events, and producing accessible resources for all.</p>
+            <div class="vol-links">
+              <a href="https://luma.com/71t7s9x9" target="_blank">&#8594; AI Abidjan</a>
+              <a href="https://luma.com/aic-WomeninAIAbidjan" target="_blank">&#8594; Women in AI Abidjan</a>
+              <a href="https://luma.com/aic-abj-aiinpractice" target="_blank">&#8594; AI in Practice Abidjan</a>
+              <a href="https://luma.com/h4h-abidjan" target="_blank">&#8594; Hack for Humanity Abidjan</a>
+            </div>
+          </div>
+
+          <div class="vol-card">
+            <h4 class="vol-title">Finalist &mdash; Women in GovTech Challenge</h4>
+            <p class="vol-period">Feb. &mdash; Apr. 2026</p>
+            <p class="vol-desc">Programme backed by the UN (ITU, UNDP) and the World Bank. Selected from 1,000+ applicants across 50 countries. Project: digitisation of academic diplomas in C&ocirc;te d&rsquo;Ivoire (all-female team). Applied DPI principles, AI governance, privacy-by-design and data ethics.</p>
+            <div class="vol-links">
+              <a href="https://govstack.global/women-in-govtech-challenge/" target="_blank">&#8594; GovStack Global</a>
+            </div>
+          </div>
+
+          <div class="vol-card">
+            <h4 class="vol-title">Cap Orientation Lead</h4>
+            <p class="vol-period">Since 2023</p>
+            <p class="vol-desc">Scholarship and mentoring programme for disadvantaged students.</p>
+          </div>
+
+          <div class="vol-card">
+            <h4 class="vol-title">President &mdash; Ivorian Students Association of Pau</h4>
+            <p class="vol-period">2020 &mdash; 2021</p>
+          </div>
+
+          <div class="vol-card">
+            <h4 class="vol-title">Academic Tutor</h4>
+            <p class="vol-period">2019 &mdash; 2020</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="wrap">
+      <h3 class="footer-name">Noellie Aka</h3>
+      <p class="footer-tagline">Learn, serve and inspire.</p>
+      <div class="footer-contact">
+        <a href="https://www.linkedin.com/in/noellie-aka-906801196/" target="_blank">LinkedIn &#8599;</a>
+        <span>+33(0)636473001</span>
+        <span>akanoellie@yahoo.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    /* Reinit Isotope for the CSS grid layout */
+    window.addEventListener('load', function() {
+      var grid = document.querySelector('.portfolio-container');
+      if (!grid) return;
+      var iso = new Isotope(grid, { itemSelector: '.portfolio-item', layoutMode: 'fitRows' });
+      document.querySelectorAll('#portfolio-flters li').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('#portfolio-flters li').forEach(function(el) { el.classList.remove('filter-active'); });
+          this.classList.add('filter-active');
+          iso.arrange({ filter: this.getAttribute('data-filter') });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
